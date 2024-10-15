@@ -12,9 +12,9 @@ public class MenuScreen extends World {
 
         // Avatar Selection
         avatars = new LinkedList<>();
-        avatars.add(new GreenfootImage("avatar1.png"));
-        avatars.add(new GreenfootImage("avatar2.png"));
-        avatars.add(new GreenfootImage("avatar3.png"));
+        avatars.add(new GreenfootImage("face_a.png"));
+        avatars.add(new GreenfootImage("face_b.png"));
+        avatars.add(new GreenfootImage("face_c.png"));
 
         currentAvatar = avatars.peek();
         setBackground(currentAvatar);
@@ -22,9 +22,9 @@ public class MenuScreen extends World {
         addObject(new Button(this::cycleAvatar, "Next Avatar"), 300, 300);
     }
 
-    //public void goInstructions() {
-    //    Greenfoot.setWorld(new InstructionScreen(this));
-    //}
+    public void goInstructions() {
+        Greenfoot.setWorld(new InstructionScreen(this));
+    }
 
     public void cycleAvatar() {
         avatars.add(avatars.remove()); // Rotate the avatars in the queue

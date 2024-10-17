@@ -1,4 +1,4 @@
-import greenfoot.*;
+17import greenfoot.*;
 import java.util.Queue;
 import java.util.LinkedList;
 

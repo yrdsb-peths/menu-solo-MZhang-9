@@ -10,8 +10,8 @@ public class MenuScreen extends World {
     public MenuScreen() {    
         super(600, 400, 1);
         addObject(new Button(this::goInstructions, "Instructions"), 300, 360);
-        addObject(new Button(this::goHighScores, "High Scores"), 300, 260); 
-        addObject(new Button(this::cycleAvatar, "Next Avatar"), 300, 310);
+        addObject(new Button(this::goHighScores, "High Scores"), 300, 310); 
+        addObject(new Button(this::cycleAvatar, "Next Avatar"), 300, 260);
 
         // Avatar Selection
         avatars = new LinkedList<>();
@@ -37,7 +37,15 @@ public class MenuScreen extends World {
     public void cycleAvatar() {
         avatars.add(avatars.remove()); // Rotate the avatars in the queue
         currentAvatar = avatars.peek();
-        setBackground(currentAvatar);  // Update the background with the new avatar
+    }
+    
+    
+    
+    private void updateAvatar() {
+        avatarActor.setImage(currentAvatar);  // Set the current avatar image
+        if (!getObjects(Actor.class).contains(avatarActor)) {
+            addObject(avatarActor, 300, 200); // Position it next to the "Next Avatar" button
+        }
     }
     
     private void updateAvatar() {

@@ -1,4 +1,4 @@
-17import greenfoot.*;
+import greenfoot.*;
 import java.util.Queue;
 import java.util.LinkedList;
 
@@ -9,6 +9,7 @@ public class MenuScreen extends World {
     public MenuScreen() {    
         super(600, 400, 1);
         addObject(new Button(this::goInstructions, "Instructions"), 300, 340);
+        addObject(new Button(this::goHighScores, "High Scores"), 300, 300); 
 
         // Avatar Selection
         avatars = new LinkedList<>();
@@ -21,14 +22,20 @@ public class MenuScreen extends World {
 
         addObject(new Button(this::cycleAvatar, "Next Avatar"), 300, 300);
     }
-
+    
     public void goInstructions() {
         Greenfoot.setWorld(new InstructionScreen(this));
     }
-
+    
+    //going through avatar
     public void cycleAvatar() {
         avatars.add(avatars.remove()); // Rotate the avatars in the queue
         currentAvatar = avatars.peek();
         setBackground(currentAvatar);  // Update the background with the new avatar
+    }
+    
+    //going to high score screen
+    public void goHighScores(){
+        Greenfoot.setWorld(new HighScore());  
     }
 }

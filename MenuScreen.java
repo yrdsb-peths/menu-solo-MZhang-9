@@ -40,6 +40,13 @@ public class MenuScreen extends World {
         setBackground(currentAvatar);  // Update the background with the new avatar
     }
     
+    private void updateAvatar() {
+        avatarActor.setImage(currentAvatar);  // Set the current avatar image
+        if (!getObjects(Actor.class).contains(avatarActor)) {
+            addObject(avatarActor, 350, 200); // Position it next to the "Next Avatar" button
+        }
+    }
+    
     //going to high score screen
     public void goHighScores(){
         Greenfoot.setWorld(new HighScore());  

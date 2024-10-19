@@ -9,7 +9,7 @@ public class MenuScreen extends World {
     public MenuScreen() {    
         super(600, 400, 1);
         addObject(new Button(this::goInstructions, "Instructions"), 300, 340);
-        addObject(new Button(this::goHighScores, "High Scores"), 300, 300); 
+        addObject(new Button(this::goHighScores, "High Scores"), 300, 260); 
 
         // Avatar Selection
         avatars = new LinkedList<>();

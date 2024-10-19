@@ -8,8 +8,8 @@ public class MenuScreen extends World {
 
     public MenuScreen() {    
         super(600, 400, 1);
-        addObject(new Button(this::goInstructions, "Instructions"), 300, 340);
-        addObject(new Button(this::goHighScores, "High Scores"), 300, 300); 
+        addObject(new Button(this::goInstructions, "Instructions"), 300, 360);
+        addObject(new Button(this::goHighScores, "High Scores"), 300, 260); 
 
         // Avatar Selection
         avatars = new LinkedList<>();
@@ -20,7 +20,7 @@ public class MenuScreen extends World {
         currentAvatar = avatars.peek();
         setBackground(currentAvatar);
 
-        addObject(new Button(this::cycleAvatar, "Next Avatar"), 300, 300);
+        addObject(new Button(this::cycleAvatar, "Next Avatar"), 300, 310);
     }
     
     public void goInstructions() {

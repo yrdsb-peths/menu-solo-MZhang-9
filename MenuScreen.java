@@ -40,18 +40,10 @@ public class MenuScreen extends World {
     }
     
     
-    
     private void updateAvatar() {
         avatarActor.setImage(currentAvatar);  // Set the current avatar image
         if (!getObjects(Actor.class).contains(avatarActor)) {
             addObject(avatarActor, 300, 200); // Position it next to the "Next Avatar" button
-        }
-    }
-    
-    private void updateAvatar() {
-        avatarActor.setImage(currentAvatar);  // Set the current avatar image
-        if (!getObjects(Actor.class).contains(avatarActor)) {
-            addObject(avatarActor, 350, 200); // Position it next to the "Next Avatar" button
         }
     }
     

@@ -5,7 +5,8 @@ public class InstructionScreen extends World {
     private String[] instructions;
     private int index;
     private Label instructionLabel;
-
+    
+    //main instruction screen
     public InstructionScreen(MenuScreen menu) {
         super(600, 400, 1);
         this.menu = menu;
@@ -24,6 +25,7 @@ public class InstructionScreen extends World {
         addObject(new Button(this::goBack, "Back to Menu"), 300, 350);
     }
 
+    //changing to next Instruction using index of array
     public void nextInstruction() {
         if (index < instructions.length - 1) {
             index++;
@@ -31,6 +33,7 @@ public class InstructionScreen extends World {
         }
     }
 
+    //changing to previous Instruction using index of array
     public void previousInstruction() {
         if (index > 0) {
             index--;
@@ -38,6 +41,7 @@ public class InstructionScreen extends World {
         }
     }
 
+    //back to menu
     public void goBack() {
         Greenfoot.setWorld(menu);
     }

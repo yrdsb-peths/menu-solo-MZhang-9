@@ -22,6 +22,7 @@ public class Button extends Actor {
         setImage(buttonImage); // Set the final button image
     }
 
+    //action
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
             if (action != null) {

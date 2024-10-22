@@ -7,6 +7,7 @@ public class HighScore extends World
 {
     private Map<String, Integer> scores;
 
+    //High score screen 
     public HighScore() {
         super(600, 400, 1);
         
@@ -19,6 +20,7 @@ public class HighScore extends World
         displayScores();
     }
     
+    //displaying scores at good positions
     private void displayScores(){ 
         //starting position
         int yPosition = 150;

@@ -6,7 +6,8 @@ public class MenuScreen extends World {
     private Queue<GreenfootImage> avatars;
     private GreenfootImage currentAvatar;
     private Actor avatarActor;
-
+    
+    //main menu screen
     public MenuScreen() {    
         super(600, 400, 1);
         addObject(new Button(this::goInstructions, "Instructions"), 300, 360);
@@ -29,6 +30,7 @@ public class MenuScreen extends World {
         updateAvatar();
     }
     
+    //going back to intruction screen
     public void goInstructions() {
         Greenfoot.setWorld(new InstructionScreen(this));
     }
@@ -39,7 +41,7 @@ public class MenuScreen extends World {
         currentAvatar = avatars.peek();
     }
     
-    
+    //changing avatar
     private void updateAvatar() {
         avatarActor.setImage(currentAvatar);  // Set the current avatar image
         if (!getObjects(Actor.class).contains(avatarActor)) {
